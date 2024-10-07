@@ -14,6 +14,9 @@ jobs:
         node-version: [14.x, 16.x, 18.x]
 
     steps:
+      - uses: step-security/harden-runner@446798f8213ac2e75931c1b0769676d927801858 # v2.10.0
+        with:
+          egress-policy: audit
       - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
